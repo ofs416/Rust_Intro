@@ -94,6 +94,7 @@ fn main() {
 
     takes_ownership(s); // s's value moves into the function...
     // ... and so is no longer valid here
+    //  takes_ownership would have to return for s to then own it when function scope ends
 
     let x = 5; // x comes into scope
 
