@@ -50,6 +50,16 @@ fn main() {
         let r3 = &mut s; // no problem
         println!("{r3}")
     }
+
+    // Dangling References
+    fn dangle() -> &String {
+        // dangle returns a reference to a String
+
+        let s = String::from("hello"); // s is a new String
+
+        &s // we return a reference to the String, s
+    } // Here, s goes out of scope and is dropped, so its memory goes away.
+    // Danger! instead return s
 }
 
 fn calculate_length(s: &String) -> usize {
